@@ -14,6 +14,7 @@ class App
     {
         $this->router = new Router();
     }
+
     public function run()
     {
         $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
