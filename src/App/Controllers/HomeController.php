@@ -19,7 +19,9 @@ class HomeController
 
     public function Home()
     {
-        $secret = "Welcome to PHP8";
-        $this->view->render('/index.php');
+        $title = 'Welcome to PHP8';
+        $this->view->render('/index.php', [
+            'title' => $title,
+        ]);
     }
 }
