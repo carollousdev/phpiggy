@@ -26,4 +26,11 @@ class Router
             'controller' => $controller
         ];
     }
+
+    public function dispatch(string $path, string $method)
+    {
+        $path = $this->normalizePath($path);
+        $method = strtoupper($method);
+        echo $path . $method;
+    }
 }
