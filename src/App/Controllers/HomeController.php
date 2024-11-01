@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use Framework\TemplateEngine;
+use App\Config\paths;
 
 class HomeController
 {
@@ -13,7 +14,7 @@ class HomeController
 
     public function __construct()
     {
-        $this->view = new TemplateEngine();
+        $this->view = new TemplateEngine(paths::VIEW);
     }
 
     public function Home()
