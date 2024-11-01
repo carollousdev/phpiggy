@@ -19,7 +19,7 @@ class HomeController
 
     public function Home()
     {
-        dd($this->view);
-        echo 'Home Page';
+        $secret = "Welcome to PHP8";
+        $this->view->render('/index.php');
     }
 }
