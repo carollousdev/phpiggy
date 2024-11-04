@@ -19,7 +19,7 @@ class AboutController
 
     public function About()
     {
-        $title = 'Welcome to PHP8';
+        $title = 'About';
         echo $this->view->render('About.php', [
             'title' => $title,
         ]);

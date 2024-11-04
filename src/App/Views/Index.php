@@ -1,4 +1,4 @@
-<?php include $this->resolve("Partial/Header.php"); ?>
+<?php include $this->resolve("Partial/_header.php"); ?>
 <!-- Start Main Content Area -->
 <section class="container mx-auto mt-12 p-4 bg-white shadow-md border border-gray-200 rounded">
     <div class="flex items-center justify-between border-b border-gray-200 pb-4">
@@ -258,4 +258,4 @@
     </nav>
 </section>
 <!-- Einclude nd Main Content Area -->
-<?php include $this->resolve("Partial/Footer.php"); ?>
+<?php include $this->resolve("Partial/_footer.php"); ?>
