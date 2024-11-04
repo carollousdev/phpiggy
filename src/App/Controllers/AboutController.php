@@ -7,7 +7,7 @@ namespace App\Controllers;
 use Framework\TemplateEngine;
 use App\Config\paths;
 
-class HomeController
+class AboutController
 {
 
     private TemplateEngine $view;
@@ -17,10 +17,10 @@ class HomeController
         $this->view = new TemplateEngine(paths::VIEW);
     }
 
-    public function Home()
+    public function About()
     {
         $title = 'Welcome to PHP8';
-        echo $this->view->render('Index.php', [
+        echo $this->view->render('About.php', [
             'title' => $title,
         ]);
     }
