@@ -1,12 +1,15 @@
 {
-    "name": "carollous/phpiggy",
-    "Description": "A PHP application for tracking expenses",
-    "Type": "project",
-    "require": {},
-    "autoload": {
-        "psr-4": {
-            "Framework\\": "src/App/Framework",
-            "App\\": "src/App"
-        }
-    }
+  "name": "carollous/phpiggy",
+  "Description": "A PHP application for tracking expenses",
+  "Type": "project",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Framework\\": "src/App/Framework",
+      "App\\": "src/App"
+    },
+    "files": [
+      "src/App/Config/Routes.php"
+    ]
+  }
 }
