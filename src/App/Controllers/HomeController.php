@@ -14,9 +14,6 @@ class HomeController
 
     public function Home()
     {
-        $title = 'Welcome to PHP8';
-        echo $this->view->render('Index.php', [
-            'title' => $title,
-        ]);
+        echo $this->view->render("Index.php");
     }
 }

@@ -10,6 +10,7 @@ use Framework\Exceptions\ContainerException;
 class Container
 {
     private array $definitions = [];
+    private array $resolved = [];
 
     public function addDefinitions(array $newDefinitions)
     {
@@ -55,9 +56,15 @@ class Container
             throw new ContainerException("Class {$id} does not exist in container");
         }
 
-        $factory = $this->definitions[$id];
-        $dependencies = $factory();
+        if (array_key_exists($id, $this->resolved)) {
+            return $this->resolved[$id];
+        }
 
-        return $dependencies;
+        $factory = $this->definitions[$id];
+        $dependency = $factory();
+
+        $this->resolved['id'] = $dependency;
+
+        return $dependency;
     }
 }
