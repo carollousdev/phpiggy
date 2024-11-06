@@ -38,12 +38,20 @@ class Router
                 continue;
             }
             [$class, $function] = $route['controller'];
-            if ($container) {
-                $controllerInstance = $container->resolve($class);
-            } else {
-                $controllerInstance = new $class;
+
+            $controllerInstance = $container ?
+                $container->resolve($class) :
+                new $class;
+
+            $action = fn() => $controllerInstance->{$function}();
+
+            foreach ($this->middleware as $middleware) {
+                $middlewareInstance = new $middleware;
+                $action = fn() => $middlewareInstance->process($action);
             }
-            $controllerInstance->{$function}();
+
+            $action();
+            return;
         }
     }
 
