@@ -7,13 +7,13 @@ namespace App\Controllers;
 use Framework\TemplateEngine;
 use App\Config\paths;
 
-class HomeController
+class RegisterController
 {
 
     public function __construct(private TemplateEngine $view) {}
 
-    public function Home()
+    public function Register()
     {
-        echo $this->view->render("Index.php", ['title' => "Expense Tracking App"]);
+        echo $this->view->render("Register.php", ['title' => "Expense Tracking App"]);
     }
 }
