@@ -15,11 +15,12 @@ class SessionMiddleware implements MiddlewareInterface
             throw new SessionException("Session already active.");
         }
 
-        if (headers_sent()) {
-            throw new SessionException("Header already sent.");
+        if (headers_sent($filename, $line)) {
+            throw new SessionException("Header already sent. Consider enabling output buffering. Data outputted from {$filename} - Line: {$line}");
         }
 
         session_start();
         $next();
+        session_write_close();
     }
 }
